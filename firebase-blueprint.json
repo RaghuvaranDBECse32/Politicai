@@ -1,0 +1,51 @@
+{
+  "entities": {
+    "Conversation": {
+      "title": "Conversation",
+      "description": "A safety research conversation log synced with Firestore",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The unique conversation identifier"
+        },
+        "userId": {
+          "type": "string",
+          "description": "The authenticated Firebase user ID"
+        },
+        "title": {
+          "type": "string",
+          "description": "Conversation title"
+        },
+        "systemInstruction": {
+          "type": "string",
+          "description": "The active system safety directives"
+        },
+        "model": {
+          "type": "string",
+          "description": "Target AI model alias used"
+        },
+        "temperature": {
+          "type": "number",
+          "description": "Model dispatch temperature setting"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO timestamp of creation"
+        },
+        "messages": {
+          "type": "array",
+          "description": "Log of user queries and model safety dispatches"
+        }
+      },
+      "required": ["id", "userId", "title", "messages"]
+    }
+  },
+  "firestore": {
+    "/conversations/{conversationId}": {
+      "schema": "Conversation",
+      "description": "Collection of synced conversations for evaluation workspace"
+    }
+  }
+}

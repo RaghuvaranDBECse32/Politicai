@@ -1,0 +1,6 @@
+{
+  "name": "ELECTOR Feed AI Safety Copilot",
+  "description": "A ChatGPT-style intelligence applet for global politics, election coaching, politician tracking, and real vs. fake news alignment verification.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
